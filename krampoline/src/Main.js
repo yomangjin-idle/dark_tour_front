@@ -1,47 +1,43 @@
-import { useState } from 'react';
-import './App.css';
-import { instance } from "./api.js";
+//import { useState } from 'react';
+import styled from "styled-components";
+import "./App.css";
+//import { instance } from "./api.js";
 
 function Main() {
-    
-  const [apiTest, setApiTest] = useState(false);
-  const [dbTest, setDbTest] = useState(false);
-    
-  const handleApiOnclick = async () => {
-      try {
-          await instance.get("/test");
-          setApiTest(true);
-      } catch(err) {
-          console.log(err);
-      }
-      
-  }
-  
-  const handleDbOnClick = async () => {
-      try {
-          await instance.get("/db");
-          setDbTest(true);
-      } catch(err) {
-          console.log(err);
-      }
-  }
-  
-  return (
-    <div className="App">
-      <header className="App-header">
-        
-        <div>
-          Hello Krampoline !
+    // const [apiTest, setApiTest] = useState(false);
+    // const [dbTest, setDbTest] = useState(false);
+
+    // const handleApiOnclick = async () => {
+    //     try {
+    //         await instance.get("/test");
+    //         setApiTest(true);
+    //     } catch(err) {
+    //         console.log(err);
+    //     }
+
+    // }
+
+    // const handleDbOnClick = async () => {
+    //     try {
+    //         await instance.get("/db");
+    //         setDbTest(true);
+    //     } catch(err) {
+    //         console.log(err);
+    //     }
+    // }
+
+    return (
+        <div className="App">
+            <Container></Container>
         </div>
-        <div>
-          <button onClick={handleApiOnclick}>API TEST</button><div>{apiTest?"CONNECT":"NOT YET"}</div>
-        </div>
-          <div>
-          <button onClick={handleDbOnClick}>DB TEST</button><div>{dbTest?"CONNECT":"NOT YET"}</div>
-        </div>
-      </header>
-    </div>
-  );
+    );
 }
 
+const Container = styled.div`
+    width: 375px;
+    height: 100vh;
+    background-color: white;
+    border: 1px solid black;
+    box-sizing: border-box;
+`;
 export default Main;
