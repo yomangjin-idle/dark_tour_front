@@ -8,7 +8,7 @@ const instance = axios.create({
   },
 });
 
-const getTest = async (props) => {
+const getTest = async () => {
   return await instance.get(`/test`);
 };
 
