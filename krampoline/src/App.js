@@ -1,17 +1,22 @@
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import Main from "./Main";
-import { theme } from './styles/theme';
+import { theme } from "./styles/theme";
+import Onboading from "pages/Onboading";
+import Layout from "./Layout";
 
 function App() {
     return (
-        <BrowserRouter>
-            <ThemeProvider theme={theme}>
-                <Routes>
-                    <Route path="/" element={<Main />} />
-                </Routes>
-            </ThemeProvider>
-        </BrowserRouter>
+        <Layout>
+            <BrowserRouter>
+                <ThemeProvider theme={theme}>
+                    <Routes>
+                        <Route path="/" element={<Onboading />} />
+                        <Route path="/test" element={""} />
+                        <Route path="/details" element={""} />
+                    </Routes>
+                </ThemeProvider>
+            </BrowserRouter>
+        </Layout>
     );
 }
 
