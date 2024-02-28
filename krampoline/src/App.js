@@ -13,7 +13,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Onboading />} />
                         <Route path="/main" element={<Main/>} />
-                        <Route path="/details" element={""} />
+                        <Route path="/details/:id" element={""} />
                     </Routes>
                 </Layout>
             </ThemeProvider>
