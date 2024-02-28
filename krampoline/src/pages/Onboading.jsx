@@ -1,11 +1,15 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import map from "assets/map.png";
+import title from "assets/title.svg";
+import onboadingIsland from "assets/onboading_island.svg";
+import onboadingBackground from "assets/onboadingBackground.svg";
 import { useNavigate } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import FloatDiv from "components/atoms/FloatDiv";
+import { theme } from "styles/theme";
 
 export default function Onboading() {
+    const { font } = theme;
     const navigate = useNavigate();
 
     const onClickStartHandler = () => {
@@ -15,16 +19,23 @@ export default function Onboading() {
     return (
         <MovingBackground>
             <LogoBox>
+                <img src={title}></img>
                 <AnimatePresence mode="wait">
-                    <FloatDiv initialY={10} exitY={-10}>
-                        <Logo src={map}></Logo>
+                    <FloatDiv initialY={10} exitY={-10} duration={2}>
+                        <Logo src={onboadingIsland}></Logo>
                     </FloatDiv>
                 </AnimatePresence>
             </LogoBox>
+            <SubTitle color={font.colors.white}>떠난 이의 넋을 되찾다</SubTitle>
             <BottomBox>
-                <OnboadingText>제주도를 여행해보세요</OnboadingText>
+                <OnboadingText>
+                    {`아름다운 섬 제주에 숨겨진 역사를 아시나요.
+                    7년간 이어진 무차별적인 학살과 참혹한 희생.
+                    그들의 넋두리를 담아 당시의 아픔을 전합니다.
+                    그 날의 이야기, 들어보실래요?`}
+                </OnboadingText>
                 <StartButton onClick={onClickStartHandler}>
-                    제주파티
+                    시작하기
                 </StartButton>
             </BottomBox>
         </MovingBackground>
@@ -33,52 +44,70 @@ export default function Onboading() {
 
 const moveBackground = keyframes`
   from { background-position: 0 0; }
-  to { background-position: -100% 0; }
+  to { background-position: 100% 0; }
+
+`;
+const SubTitle = styled.div`
+    color: ${(props) => props.theme.font.colors.white};
+    font-size: 1.5rem;
+    font-family: ${(props) => props.theme.font.family.onboadingTitle};
 `;
 
 const Logo = styled.img`
-    width: 100px;
-    height: 100px;
+    margin-top: 5rem;
 `;
 
 const LogoBox = styled.div`
-    height: 60%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
 `;
 
 const BottomBox = styled.div`
-    height: 40%;
     flex-direction: column;
     display: flex;
     align-items: center;
+    margin-top: 3rem;
 `;
 const StartButton = styled.button`
     width: 90%;
-    height: 50px;
-    margin-top: 25%;
+    height: 72px;
+    font-size: 1.5rem;
+    margin-top: 3.5rem;
+    font-weight: ${(props) => props.theme.font.fontStyle.bold}; ;
     border: none;
     background-color: black;
     color: white;
-    background-color:;
+    background-color: ${(props) => props.theme.colors.main.primary};
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 1.25rem;
     &:hover {
-        opacity: 0.9;
+        opacity: 0.8;
     }
 `;
 
 const OnboadingText = styled.div`
-    color: ${(props) => props.theme.colors.white};
+    white-space: pre-line;
+    font-family: ${(props) => props.theme.font.family.onboading};
+    color: #c5c5c5;
+    line-height: 24px;
+    font-size: ${(props) => props.theme.font.fontSize.medium};
+    display: flex;
+    align-items: center;
+    text-align: center;
 `;
 
 // 애니메이션을 적용할 스타일드 컴포넌트 생성
 const MovingBackground = styled.div`
-    background-image: url(${map});
+    background-image: url(${onboadingBackground});
     background-repeat: repeat-x;
-    animation: ${moveBackground} 30s linear infinite;
+    animation: ${moveBackground} 30s linear reverse;
     width: 100%;
     height: 100%;
     top: 0;
