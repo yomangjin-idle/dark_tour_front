@@ -1,13 +1,6 @@
 import styled from "styled-components";
 
-const Description = ({
-  fontSize,
-  color,
-  fontBold,
-  align,
-  margin,
-  children,
-}) => {
+const Content = ({ fontSize, color, fontBold, align, margin, children }) => {
   return (
     <Wrapper
       fontSize={fontSize}
@@ -21,9 +14,9 @@ const Description = ({
   );
 };
 
-export default Description;
+export default Content;
 
-const Wrapper = styled.p`
+const Wrapper = styled.span`
   font-size: ${(props) =>
     props.fontSize ? props.fontSize : props.theme.font.fontSize.medium};
   font-weight: ${(props) => (props.fontBold ? props.fontBold : `500`)};
