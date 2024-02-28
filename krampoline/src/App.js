@@ -6,6 +6,7 @@ import Layout from "./Layout";
 import Main from "pages/Main";
 import Details from "pages/Details";
 import AudioBooks from "pages/AudioBooks";
+import Test from "pages/Test";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/main" element={<Main />} />
             <Route path="/details/:id" element={<Details />} />
             <Route path="/details/audio/:id" element={<AudioBooks />} />
+            <Route path="/test" element={<Test />} />
           </Routes>
         </Layout>
       </ThemeProvider>
