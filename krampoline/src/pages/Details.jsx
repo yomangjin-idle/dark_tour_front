@@ -1,20 +1,17 @@
-// import SubTitle from "components/atoms/SubTitle";
-// import ImageFlexBox from "components/modules/ImageFlexBox";
 import styled from "styled-components";
-// import aa from "assets/test.png";
-// import Image from "components/atoms/Image";
-import detailImg from "assets/detailsImg.svg";
-import Image from "components/atoms/Image";
 import DetailsTemplate from "components/modules/DetailsTemplate";
 import Description from "components/atoms/Description";
 import ImageFlexBox from "components/molecules/ImageFlexBox";
 import PlaceBox from "components/molecules/PlaceBox";
+import AudioBox from "components/modules/AudioBox";
+import BackButton from "components/atoms/BackButton";
 
 const Details = () => {
   return (
     <PageWrapper>
       <Container>
-        <Image src={detailImg} width="100%" height="auto" radius="0" />
+        <BackButton />
+        <AudioBox title="다랑쉬굴" />
         <DetailBox>
           <DetailsTemplate name="주소">
             <Description>
@@ -43,6 +40,7 @@ const Details = () => {
 
 const PageWrapper = styled.div`
   height: 100%;
+  position: relative;
 `;
 
 const Container = styled.section`
