@@ -36,7 +36,10 @@ const Layout = ({ children }) => {
 
 const Container = styled.div`
   width: 375px;
-  height: 100vh;
+  height: 667px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
   box-sizing: border-box;
 `;

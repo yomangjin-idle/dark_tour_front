@@ -25,7 +25,11 @@ export const theme = {
     },
   },
   font: {
-    family: "Spoqa Han Sans Neo",
+    family: {
+      onboadingTitle:'AppleSDGothicNeoSB, sans-serif',
+      onboadingSub:'AppleSDGothicNeoR, sans-serif',
+
+    },
     fontSize: {
       xsmall: "0.5rem",
       small: "0.75rem",
