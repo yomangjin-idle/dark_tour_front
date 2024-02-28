@@ -96,7 +96,7 @@ const Text = styled.span`
     white-space: nowrap;
     transform: ${(props) =>
         `translate(${props.len > 4 ? "-70%" : "-50%"}, 0)`}; // X축과 Y축으로 조건부 이동
-    font-size: 0.3rem;
+    font-size: 0.5rem;
     z-index: 10;
 `;
 

@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import title from "assets/title.svg";
+import logo from "assets/logo.svg";
 import onboadingIsland from "assets/onboading_island.svg";
 import onboadingBackground from "assets/onboadingBackground.svg";
 import { useNavigate } from "react-router-dom";
@@ -19,11 +19,13 @@ export default function Onboading() {
     return (
         <MovingBackground>
             <LogoBox>
-                <img src={title}></img>
                 <AnimatePresence mode="wait">
-                    <FloatDiv initialY={10} exitY={-10} duration={2}>
-                        <Logo src={onboadingIsland}></Logo>
-                    </FloatDiv>
+                    <img src={logo} />
+                    <Wrapper>
+                        <FloatDiv initialY={10} exitY={-10} duration={2}>
+                            <Logo src={onboadingIsland}></Logo>
+                        </FloatDiv>
+                    </Wrapper>
                 </AnimatePresence>
             </LogoBox>
             <SubTitle color={font.colors.white}>떠난 이의 넋을 되찾다</SubTitle>
@@ -47,6 +49,10 @@ const moveBackground = keyframes`
   to { background-position: 100% 0; }
 
 `;
+const Wrapper = styled.div`
+    width: 300px;
+    height: 210px;
+`;
 const SubTitle = styled.div`
     color: ${(props) => props.theme.font.colors.white};
     font-size: 1.5rem;
@@ -63,7 +69,6 @@ const LogoBox = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 3.5rem;
-    margin-bottom: 1rem;
 `;
 
 const BottomBox = styled.div`
@@ -77,10 +82,11 @@ const StartButton = styled.button`
     height: 72px;
     font-size: 1.5rem;
     margin-top: 3.5rem;
-    font-weight: ${(props) => props.theme.font.fontStyle.bold}; ;
+    font-weight: ${(props) => props.theme.font.fontStyle.bold};
     border: none;
     background-color: black;
     color: white;
+    font-family: ${(props) => props.theme.font.family.onboadingButton};
     background-color: ${(props) => props.theme.colors.main.primary};
     display: flex;
     justify-content: center;

@@ -28,6 +28,7 @@ export const theme = {
     family: {
       onboadingTitle:'AppleSDGothicNeoSB, sans-serif',
       onboadingSub:'AppleSDGothicNeoR, sans-serif',
+      onboadingButton:'AppleSDGothicNeoB, sans-serif',
 
     },
     fontSize: {
