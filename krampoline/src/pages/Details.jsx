@@ -3,14 +3,14 @@ import DetailsTemplate from "components/modules/DetailsTemplate";
 import Description from "components/atoms/Description";
 import ImageFlexBox from "components/molecules/ImageFlexBox";
 import PlaceBox from "components/molecules/PlaceBox";
-import IconButton from "components/atoms/IconButton";
 import AudioBox from "components/modules/AudioBox";
+import BackButton from "components/atoms/BackButton";
 
 const Details = () => {
   return (
     <PageWrapper>
       <Container>
-        <IconButton />
+        <BackButton />
         <AudioBox title="다랑쉬굴" />
         <DetailBox>
           <DetailsTemplate name="주소">

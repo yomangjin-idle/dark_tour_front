@@ -1,19 +1,20 @@
 import styled from "styled-components";
 import back from "assets/back.svg";
 
-const IconButton = () => {
+const BackButton = ({ title }) => {
   return (
     <Container>
       <ButtonWrapper>
         <Wrapper>
           <img src={back} />
         </Wrapper>
+        <Content>{title}</Content>
       </ButtonWrapper>
     </Container>
   );
 };
 
-export default IconButton;
+export default BackButton;
 
 const Container = styled.div`
   position: fixed;
@@ -41,4 +42,14 @@ const Wrapper = styled.button`
     height: 3rem;
     padding: 0.5rem;
   }
+`;
+
+const Content = styled.div`
+  height: 100%;
+  font-size: ${(props) => props.theme.font.fontSize.large};
+  flex-grow: 2;
+  color: ${(props) => props.theme.font.colors.white};
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
