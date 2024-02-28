@@ -2,10 +2,17 @@ import Image from "components/atoms/Image";
 import styled from "styled-components";
 import detailImg from "assets/detailsImg.svg";
 import play from "assets/play.svg";
+import { useNavigate, useParams } from "react-router-dom";
 
 const AudioBox = ({ title }) => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  const onClickHandler = () => {
+    navigate(`/details/audio/${id}`);
+  };
   return (
-    <Wrapper>
+    <Wrapper onClick={onClickHandler}>
       <Image src={detailImg} width="100%" height="auto" radius="0" />
       <Background />
       <Play src={play} />
@@ -23,6 +30,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  cursor: pointer;
 `;
 
 const Background = styled.div`

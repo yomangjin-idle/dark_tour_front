@@ -1,8 +1,10 @@
 import BackButton from "components/atoms/BackButton";
 import AudioPlayer from "components/modules/AudioPlayer";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
 const AudioBooks = () => {
+  const { id } = useParams();
   return (
     <>
       <BackButton title="다랑쉬굴의 추억" />
@@ -42,5 +44,7 @@ const Wrapper = styled.div`
 `;
 
 const Content = styled.p`
+  width: 5rem;
+  height: 5rem;
   color: ${(props) => props.theme.font.colors.white};
 `;
