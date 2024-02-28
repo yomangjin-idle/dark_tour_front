@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import jejumap from "assets/main_island.svg";
 import jejuBackGroundNight from "assets/main_background_night.svg";
-import {
-    TransformWrapper,
-    TransformComponent,
-} from "react-zoom-pan-pinch";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import styled, { keyframes } from "styled-components";
 import { DUMMY } from "./dummy";
 import { useNavigate } from "react-router-dom";
-
+import logo from "assets/logo.svg";
 
 export const Main = () => {
     const [showTitle, setShowTitle] = useState(false);
@@ -35,6 +32,7 @@ export const Main = () => {
                     initialScale={1}
                     onZoom={handleZoomChange}
                 >
+                    <Logo src={logo} />
                     <TransformComponent
                         wrapperStyle={{ width: "375px", height: "667px" }}
                         contentStyle={{ width: "100%", height: "192px" }}
@@ -56,9 +54,6 @@ export const Main = () => {
                                 fontPx,
                                 fontPy,
                             }) => {
-                                console.log(
-                                    `src/assets/landmarks/${imageLink}.svg`
-                                );
                                 return (
                                     <>
                                         <Spot
@@ -95,6 +90,13 @@ export const Main = () => {
     );
 };
 
+const Logo = styled.img`
+    position: absolute;
+    top: 128px;
+    left: 19px;
+    z-index: 10;
+`;
+
 const slideInUp = keyframes`
   from {
     transform: translateY(100%);
@@ -105,6 +107,7 @@ const slideInUp = keyframes`
 `;
 
 const Container = styled.div`
+    position: relative;
     width: 375px;
     height: 667px;
     background-image: url(${jejuBackGroundNight});
