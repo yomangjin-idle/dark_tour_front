@@ -1,3 +1,10 @@
+
+* {
+  padding : 0;
+  margin: 0;
+  box-sizing:border-box;
+}
+
 .App {
   text-align: center;
   width: 100%;
@@ -31,6 +38,15 @@
 .App-link {
   color: #61dafb;
 }
+
+ul {
+  list-style: none;  
+}
+
+button {
+  cursor : pointer;
+}
+
 
 @keyframes App-logo-spin {
   from {
