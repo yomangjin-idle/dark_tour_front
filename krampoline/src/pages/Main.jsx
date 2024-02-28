@@ -1,18 +1,21 @@
 import React, { useState } from "react";
-import jejumap from "assets/map.png";
-import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import styled from "styled-components";
+import jejumap from "assets/main_island.svg";
+import jejuBackGroundNight from "assets/main_background_night.svg";
+import {
+    TransformWrapper,
+    TransformComponent,
+} from "react-zoom-pan-pinch";
+import styled, { keyframes } from "styled-components";
 import { DUMMY } from "./dummy";
 import { useNavigate } from "react-router-dom";
 
-import FloatDiv from "components/atoms/FloatDiv";
 
 export const Main = () => {
     const [showTitle, setShowTitle] = useState(false);
     const navigate = useNavigate();
 
     const handleZoomChange = (transform) => {
-        if (transform.state.scale > 3) {
+        if (transform.state.scale > 2.0) {
             setShowTitle(true);
         } else {
             setShowTitle(false);
@@ -25,79 +28,117 @@ export const Main = () => {
     };
 
     return (
-        <MapLayout>
-            <TransformWrapper
-                centerOnInit
-                initialScale={1}
-                onZoom={handleZoomChange}
-            >
-                <TransformComponent
-                    wrapperStyle={{ width: "323px", height: "100vh" }}
-                    contentStyle={{ width: "100%", height: "192px" }}
+        <Container>
+            <MapLayout>
+                <TransformWrapper
+                    centerOnInit
+                    initialScale={1}
+                    onZoom={handleZoomChange}
                 >
-                    <img src={jejumap} width={"100%"} alt="map" id="jejuMap" />
-                    {DUMMY.map(({ px, py, name, id }) => {
-                        return (
-                            <>
-                                <Spot
-                                    px={px}
-                                    py={py}
-                                    id={id}
-                                    name={name}
-                                    key={name}
-                                    onClick={(e) => onClickHandler(e)}
-                                >
-                                    {showTitle && (
-                                        <FloatDiv initialY={0} exitY={0}>
+                    <TransformComponent
+                        wrapperStyle={{ width: "375px", height: "667px" }}
+                        contentStyle={{ width: "100%", height: "192px" }}
+                    >
+                        <img
+                            src={jejumap}
+                            width={"100%"}
+                            alt="map"
+                            id="jejuMap"
+                        />
+                        {DUMMY.map(
+                            ({
+                                px,
+                                py,
+                                name,
+                                id,
+                                imageLink,
+                                scale,
+                                fontPx,
+                                fontPy,
+                            }) => {
+                                console.log(
+                                    `src/assets/landmarks/${imageLink}.svg`
+                                );
+                                return (
+                                    <>
+                                        <Spot
+                                            link={`/landmarks/${imageLink}.svg`}
+                                            px={px}
+                                            py={py}
+                                            id={id}
+                                            name={name}
+                                            key={name}
+                                            scale={scale}
+                                            onClick={(e) => onClickHandler(e)}
+                                        />
+                                        {showTitle && (
                                             <Text
-                                                px={px}
-                                                py={py}
+                                                fontPx={fontPx}
+                                                fontPy={fontPy}
                                                 id={id}
                                                 len={name.length}
                                                 name={name}
                                                 key={name}
-                                                fontSize={"0.1rem"}
+                                                fontSize={"1rem"}
                                             >
                                                 {name}
                                             </Text>
-                                        </FloatDiv>
-                                    )}
-                                </Spot>
-                            </>
-                        );
-                    })}
-                </TransformComponent>
-            </TransformWrapper>
-        </MapLayout>
+                                        )}
+                                    </>
+                                );
+                            }
+                        )}
+                    </TransformComponent>
+                </TransformWrapper>
+            </MapLayout>
+        </Container>
     );
 };
 
+const slideInUp = keyframes`
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(50%);
+  }
+`;
+
+const Container = styled.div`
+    width: 375px;
+    height: 667px;
+    background-image: url(${jejuBackGroundNight});
+`;
 const MapLayout = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
 `;
 
 const Spot = styled.div`
     position: absolute;
-    left: ${(props) => props.px + "px"};
-    top: ${(props) => props.py + "px"};
-    width: 20px;
-    height: 20px;
-    background-color: pink;
+    left: ${(props) => props.px + 25}px;
+    top: ${(props) => props.py}px;
+    width: 50px;
+    height: 50px;
+    background-image: url(${(props) => props.link});
+    background-repeat: no-repeat; /* 배경 이미지 반복 없음 */
+    background-size: contain;
+    transform: scale(${(props) => props.scale});
 `;
 
-const Text = styled.span`
+const Text = styled.div`
     position: absolute;
-    width: 100%;
-    top: 100%;
+    left: ${(props) => props.fontPx + 25}px;
+    top: ${(props) => props.fontPy + 35}px;
+    z-index: 100;
     white-space: nowrap;
-    transform: ${(props) =>
-        `translate(${props.len > 4 ? "-70%" : "-50%"}, 0)`}; // X축과 Y축으로 조건부 이동
+    text-shadow: 2px 2px 4px rgba(0.2, 0.2, 0.2, 0.3);
     font-size: 0.5rem;
     z-index: 10;
+    color: white;
+    animation: ${slideInUp} 1s ease forwards;
 `;
 
 export default Main;
