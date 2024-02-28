@@ -37,8 +37,8 @@ export const theme = {
     },
     radius: {
         small: "0.875rem",
-        medium: "1rem",
-        large: "1.125rem",
+        medium: "1rem", //button
+        large: "1.25rem",
     },
     layout: {
         minWidth: {
