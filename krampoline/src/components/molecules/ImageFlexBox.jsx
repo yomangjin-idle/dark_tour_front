@@ -1,5 +1,5 @@
-import aa from "assets/test.png";
-import Image from "components/atoms/Image";
+import example from "assets/example.png";
+import ImageTemplate from "components/modules/ImageTemplate";
 import useMouseDrag from "hooks/useMouseDrag";
 import styled from "styled-components";
 const ImageFlexBox = () => {
@@ -13,7 +13,9 @@ const ImageFlexBox = () => {
       onMouseMove={isDrag ? onThrottleDragMove : undefined}
       ref={(e) => (scrollRef.current = e)}
     >
-      <Image src={aa} radius="0" margin="0.2rem" />
+      <ImageTemplate src={example} text="다랑쉬굴" margin="0 1rem 0 0" />
+      <ImageTemplate src={example} text="다랑쉬굴" margin="0 1rem 0 0" />
+      <ImageTemplate src={example} text="다랑쉬굴" margin="0 1rem 0 0" />
     </Container>
   );
 };
