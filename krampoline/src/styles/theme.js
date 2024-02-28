@@ -26,10 +26,15 @@ export const theme = {
   },
   font: {
     family: {
-      onboadingTitle:'AppleSDGothicNeoSB, sans-serif',
-      onboadingSub:'AppleSDGothicNeoR, sans-serif',
-      onboadingButton:'AppleSDGothicNeoB, sans-serif',
-
+      onboadingTitle: "AppleSDGothicNeoSB, sans-serif",
+      onboadingSub: "AppleSDGothicNeoR, sans-serif",
+      onboadingButton: "AppleSDGothicNeoB, sans-serif",
+      EB: "AppleSDGothicNeoEB, sans-serif",
+      H: "AppleSDGothicNeoH, sans-serif",
+      L: "AppleSDGothicNeoL, sans-serif",
+      M: "AppleSDGothicNeoM, sans-serif",
+      T: "AppleSDGothicNeoT, sans-serif",
+      UL: "AppleSDGothicNeoUL, sans-serif",
     },
     fontSize: {
       xsmall: "0.5rem",

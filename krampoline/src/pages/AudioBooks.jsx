@@ -50,6 +50,7 @@ const Content = styled.p`
   -ms-overflow-style: none;
   scrollbar-width: none;
   cursor: pointer;
+  font-family: ${(props) => props.theme.font.family.M};
 
   &::-webkit-scrollbar {
     display: none;

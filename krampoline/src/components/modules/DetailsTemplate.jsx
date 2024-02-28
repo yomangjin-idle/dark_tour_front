@@ -16,4 +16,5 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: ${(props) => (props.margin ? props.margin : `0 0 2.5rem 0`)};
+  font-family: ${(props) => props.theme.font.family.onboadingTitle};
 `;

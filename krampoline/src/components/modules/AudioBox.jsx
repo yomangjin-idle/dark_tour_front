@@ -59,4 +59,5 @@ const Title = styled.h1`
   bottom: 0.75rem;
   font-size: 2.5rem;
   color: ${(props) => props.theme.font.colors.white};
+  font-family: ${(props) => props.theme.font.family.onboadingTitle};
 `;

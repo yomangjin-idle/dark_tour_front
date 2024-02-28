@@ -30,4 +30,5 @@ const Wrapper = styled.p`
   color: ${(props) => (props.color ? props.color : `white`)};
   text-align: ${(props) => (props.align ? props.align : `left`)};
   margin: ${(props) => (props.margin ? props.margin : `0`)};
+  font-family: ${(props) => props.theme.font.family.L};
 `;

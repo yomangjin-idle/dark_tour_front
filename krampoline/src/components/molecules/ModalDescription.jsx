@@ -64,4 +64,6 @@ const Button = styled.button`
   border: none;
   background-color: ${(props) => props.theme.colors.main.primary};
   color: ${(props) => props.theme.font.colors.white};
+  font-family: ${(props) => props.theme.font.family.onboadingButton};
+  font-size: ${(props) => props.theme.font.fontSize.medium};
 `;

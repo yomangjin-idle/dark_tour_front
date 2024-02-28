@@ -130,4 +130,5 @@ const ProgressBar = styled.div`
 const Time = styled.span`
   color: ${(props) => props.theme.font.colors.white};
   font-size: ${(props) => props.theme.font.fontSize.small};
+  font-family: ${(props) => props.theme.font.family.L};
 `;
