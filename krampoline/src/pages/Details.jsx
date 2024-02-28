@@ -4,6 +4,8 @@ import Description from "components/atoms/Description";
 import ImageFlexBox from "components/molecules/ImageFlexBox";
 import PlaceBox from "components/molecules/PlaceBox";
 import MapContainer from "./MapContainer";
+import detailImg from "assets/detailsImg.svg"
+import Image from "components/atoms/Image";
 
 const Details = () => {
     return (
