@@ -39,10 +39,19 @@ export default AudioBooks;
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  padding: 4.25rem 1.5rem 0 1.5rem;
   background-color: #252936;
 `;
 
 const Content = styled.p`
+  height: 32rem;
+  margin: 4.25rem 1.5rem 5.75rem 1.5rem;
   color: ${(props) => props.theme.font.colors.white};
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  cursor: pointer;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;

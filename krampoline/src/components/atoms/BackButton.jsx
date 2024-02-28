@@ -24,24 +24,35 @@ export default BackButton;
 
 const Container = styled.div`
   position: fixed;
+  top: 11.7rem;
+  left: 0;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   z-index: 50;
   width: 100%;
 `;
 
 const ButtonWrapper = styled.div`
+  position: relative;
   width: ${(props) => props.theme.layout.minWidth.mobile};
   height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 `;
 
 const Wrapper = styled.button`
   position: absolute;
+  left: 0;
   border: none;
   width: 3rem;
   height: 3rem;
   background: transparent;
-  top: 0px;
-  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 
   > img {
     width: 3rem;
@@ -51,9 +62,11 @@ const Wrapper = styled.button`
 `;
 
 const Content = styled.div`
+  position: absolute;
+  width: 375px;
   height: 100%;
   font-size: ${(props) => props.theme.font.fontSize.large};
-  flex-grow: 2;
+
   color: ${(props) => props.theme.font.colors.white};
   display: flex;
   align-items: center;
