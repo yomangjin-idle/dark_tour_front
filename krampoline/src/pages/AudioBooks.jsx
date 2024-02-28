@@ -44,7 +44,5 @@ const Wrapper = styled.div`
 `;
 
 const Content = styled.p`
-  width: 5rem;
-  height: 5rem;
   color: ${(props) => props.theme.font.colors.white};
 `;
