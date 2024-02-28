@@ -5,6 +5,7 @@ import Onboading from "pages/Onboading";
 import Layout from "./Layout";
 import Main from "pages/Main";
 import Details from "pages/Details";
+import MapContainer from "pages/MapContainer";
 
 function App() {
   return (
