@@ -1,8 +1,9 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import aa from "assets/dummyImg.png";
+import map from "assets/map.png";
 import { useNavigate } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
+import FloatDiv from "components/atoms/FloatDiv";
 
 export default function Onboading() {
     const navigate = useNavigate();
@@ -15,14 +16,9 @@ export default function Onboading() {
         <MovingBackground>
             <LogoBox>
                 <AnimatePresence mode="wait">
-                    <motion.div
-                        initial={{ y: 10, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: -10, opacity: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <Logo src={aa}></Logo>
-                    </motion.div>
+                    <FloatDiv initialY={10} exitY={-10}>
+                        <Logo src={map}></Logo>
+                    </FloatDiv>
                 </AnimatePresence>
             </LogoBox>
             <BottomBox>
@@ -80,7 +76,7 @@ const OnboadingText = styled.div`
 
 // 애니메이션을 적용할 스타일드 컴포넌트 생성
 const MovingBackground = styled.div`
-    background-image: url(${aa});
+    background-image: url(${map});
     background-repeat: repeat-x;
     animation: ${moveBackground} 30s linear infinite;
     width: 100%;
