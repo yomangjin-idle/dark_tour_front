@@ -3,20 +3,21 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "./styles/theme";
 import Onboading from "pages/Onboading";
 import Layout from "./Layout";
+import Main from "pages/Main";
 
 function App() {
     return (
-        <Layout>
-            <BrowserRouter>
-                <ThemeProvider theme={theme}>
+        <BrowserRouter>
+            <ThemeProvider theme={theme}>
+                <Layout>
                     <Routes>
                         <Route path="/" element={<Onboading />} />
-                        <Route path="/test" element={""} />
+                        <Route path="/main" element={<Main/>} />
                         <Route path="/details" element={""} />
                     </Routes>
-                </ThemeProvider>
-            </BrowserRouter>
-        </Layout>
+                </Layout>
+            </ThemeProvider>
+        </BrowserRouter>
     );
 }
 
