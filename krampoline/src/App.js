@@ -5,7 +5,7 @@ import Onboading from "pages/Onboading";
 import Layout from "./Layout";
 import Main from "pages/Main";
 import Details from "pages/Details";
-import MapContainer from "pages/MapContainer";
+import AudioBooks from "pages/AudioBooks";
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
             <Route path="/" element={<Onboading />} />
             <Route path="/main" element={<Main />} />
             <Route path="/details/:id" element={<Details />} />
+            <Route path="/details/audio/:id" element={<AudioBooks />} />
           </Routes>
         </Layout>
       </ThemeProvider>

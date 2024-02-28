@@ -38,7 +38,6 @@ const Container = styled.div`
   width: 375px;
   height: 100vh;
   background-color: white;
-  border: 1px solid black;
   box-sizing: border-box;
 `;
 export default Layout;

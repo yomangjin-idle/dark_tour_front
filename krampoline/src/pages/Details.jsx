@@ -1,10 +1,4 @@
-// import SubTitle from "components/atoms/SubTitle";
-// import ImageFlexBox from "components/modules/ImageFlexBox";
 import styled from "styled-components";
-// import aa from "assets/test.png";
-// import Image from "components/atoms/Image";
-import detailImg from "assets/detailsImg.svg";
-import Image from "components/atoms/Image";
 import DetailsTemplate from "components/modules/DetailsTemplate";
 import Description from "components/atoms/Description";
 import ImageFlexBox from "components/molecules/ImageFlexBox";
