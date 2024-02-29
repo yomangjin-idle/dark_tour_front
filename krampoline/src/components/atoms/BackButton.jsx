@@ -24,7 +24,7 @@ export default BackButton;
 
 const Container = styled.div`
   position: fixed;
-  top: 18.2rem;
+  top: 8.5rem;
   left: 0;
   display: flex;
   flex-direction: row;

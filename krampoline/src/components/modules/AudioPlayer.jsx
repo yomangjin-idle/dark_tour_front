@@ -87,7 +87,7 @@ export default AudioPlayer;
 
 const Container = styled.div`
   position: fixed;
-  bottom: 18.2rem;
+  bottom: 8.5rem;
   width: 100%;
   height: 5.75rem;
   display: flex;

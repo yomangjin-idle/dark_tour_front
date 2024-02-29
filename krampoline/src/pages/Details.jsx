@@ -6,6 +6,8 @@ import PlaceBox from "components/molecules/PlaceBox";
 import MapContainer from "./MapContainer";
 import AudioBox from "components/modules/AudioBox";
 import BackButton from "components/atoms/BackButton";
+import d from "assets/d.png";
+import jeju from "assets/jeju.png";
 
 const Details = () => {
   return (
@@ -31,10 +33,23 @@ const Details = () => {
             <ImageFlexBox />
           </DetailsTemplate>
           <DetailsTemplate name="인근 유적지">
-            <PlaceBox />
+            <PlaceBox
+              src={jeju}
+              title="제주 4.3 평화공원"
+              des="제주 4.3 사건의 희생자를 기리는 공간"
+              address="제주특별자치도 제주시 오라로 2653"
+              gap="약 10km"
+            />
+            <PlaceBox
+              src={d}
+              title="관덕정"
+              des="제주 4.3 사건의 중심지"
+              address="제주특별자치도 제주시 관덕로 10"
+              gap="약 8km"
+            />
           </DetailsTemplate>
           <DetailsTemplate name="지도">
-            <MapContainer lat={33.450701} lng={126.570667} />
+            <MapContainer lat={33.469975} lng={126.831823} />
           </DetailsTemplate>
         </DetailBox>
       </Container>
