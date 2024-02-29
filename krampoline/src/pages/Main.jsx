@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import logo from "assets/logo.svg";
 import ModalBottom from "components/atoms/ModalBottom";
 import ModalDescription from "components/molecules/ModalDescription";
-import { checkStamp } from "modules/utils";
+import bgImg from "assets/backgroud_flower.svg";
 
 export const Main = () => {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ export const Main = () => {
   const [open, setOpen] = useState(false);
   const [placeId, setPlaceId] = useState(0);
   const [list, setList] = useState(DUMMY);
-  const [check, setCheck] = useState(false);
+  const [check, setCheck] = useState(true);
 
   const onClickCloseModalHandler = () => {
     setOpen(false);
@@ -57,6 +57,7 @@ export const Main = () => {
   return (
     <>
       <Container check={check ? jejuBackGroundSun : jejuBackGroundNight}>
+        {check && <BgImg src={bgImg} />}
         <MapLayout>
           <TransformWrapper
             centerOnInit
@@ -125,6 +126,12 @@ export const Main = () => {
   );
 };
 
+const BgImg = styled.img`
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+`;
 const Logo = styled.img`
   position: absolute;
   top: 128px;
