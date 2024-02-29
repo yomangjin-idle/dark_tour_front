@@ -18,7 +18,7 @@ export const Main = () => {
   const [open, setOpen] = useState(false);
   const [placeId, setPlaceId] = useState(0);
   const [list, setList] = useState(DUMMY);
-  const [check, setCheck] = useState(true);
+  const [check, setCheck] = useState(false);
 
   const onClickCloseModalHandler = () => {
     setOpen(false);
