@@ -44,7 +44,7 @@ const Container = styled.div`
 const Section = styled.section`
   width: 375px;
   position: fixed;
-  bottom: 11.7rem;
+  bottom: 8.5rem;
   overflow: hidden;
   z-index: 10;
   animation: ${(props) => (props.open ? `opened 0.3s` : `closed 0.3s`)};

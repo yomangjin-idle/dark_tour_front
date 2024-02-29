@@ -12,7 +12,7 @@ const ModalDescription = ({ onClickHandler }) => {
         <Image src={example} />
         <DescriptionBox>
           <SubTitle fontSize="1rem" margin="0 0 0.125rem 0">
-            제주 4.3 평화공원
+            다랑쉬골
           </SubTitle>
           <Content fontSize="0.75rem" margin="0 0 0.25rem 0" color="#999999">
             제주 4.3 사건의 희생자를 기리는 공간
