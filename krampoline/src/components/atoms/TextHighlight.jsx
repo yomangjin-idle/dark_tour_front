@@ -18,4 +18,5 @@ const Wrapper = styled.span`
     props.fontSize ? props.fontSize : props.theme.font.fontSize.small};
   padding: ${(props) => (props.padding ? props.padding : "0 0.25rem")};
   margin: ${(props) => (props.margin ? props.margin : "0 0.5rem 0 0")};
+  font-family: ${(props) => props.theme.font.family.onboadingSub};
 `;

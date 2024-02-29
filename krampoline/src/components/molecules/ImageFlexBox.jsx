@@ -29,6 +29,7 @@ const Container = styled.div`
   overflow-x: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  cursor: pointer;
 
   &::-webkit-scrollbar {
     display: none;

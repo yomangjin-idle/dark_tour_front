@@ -3,8 +3,11 @@ import styled from "styled-components";
 import speech from "assets/speech.mp3";
 import stop from "assets/stop.svg";
 import start from "assets/play.svg";
+import { setLocalStorage } from "modules/utils";
+import { useNavigate } from "react-router-dom";
 
-const AudioPlayer = () => {
+const AudioPlayer = ({ id }) => {
+  const navigate = useNavigate();
   const audioRef = useRef(new Audio(speech));
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -34,7 +37,8 @@ const AudioPlayer = () => {
 
     const onEnded = () => {
       setIsPlaying(false);
-      alert("스탬프 발급완료");
+      setLocalStorage(id, true);
+      navigate("/main");
     };
 
     audio.addEventListener("loadedmetadata", onLoadedMetadata);
@@ -83,10 +87,11 @@ export default AudioPlayer;
 
 const Container = styled.div`
   position: fixed;
-  bottom: 0;
+  bottom: 11.7rem;
   width: 100%;
   height: 5.75rem;
   display: flex;
+  justify-content: center;
 `;
 
 const Wrapper = styled.div`
@@ -129,4 +134,5 @@ const ProgressBar = styled.div`
 const Time = styled.span`
   color: ${(props) => props.theme.font.colors.white};
   font-size: ${(props) => props.theme.font.fontSize.small};
+  font-family: ${(props) => props.theme.font.family.L};
 `;
