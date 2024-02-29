@@ -44,7 +44,7 @@ const Container = styled.div`
 const Section = styled.section`
   width: 375px;
   position: fixed;
-  bottom: 0;
+  bottom: 11.7rem;
   overflow: hidden;
   z-index: 10;
   animation: ${(props) => (props.open ? `opened 0.3s` : `closed 0.3s`)};
@@ -88,15 +88,4 @@ const ModalButton = styled.span`
   background-color: #d9d9d9;
   margin-bottom: 1rem;
   border: 0;
-`;
-
-const ButtonWrapper = styled.div`
-  position: absolute;
-  top: 0.2rem;
-  right: 0.5rem;
-
-  > button > svg {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
 `;

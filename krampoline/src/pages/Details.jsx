@@ -6,8 +6,6 @@ import PlaceBox from "components/molecules/PlaceBox";
 import MapContainer from "./MapContainer";
 import AudioBox from "components/modules/AudioBox";
 import BackButton from "components/atoms/BackButton";
-import { useEffect } from "react";
-import axios from "axios";
 
 const Details = () => {
   return (

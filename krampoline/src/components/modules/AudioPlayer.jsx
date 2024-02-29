@@ -3,8 +3,11 @@ import styled from "styled-components";
 import speech from "assets/speech.mp3";
 import stop from "assets/stop.svg";
 import start from "assets/play.svg";
+import { setLocalStorage } from "modules/utils";
+import { useNavigate } from "react-router-dom";
 
-const AudioPlayer = () => {
+const AudioPlayer = ({ id }) => {
+  const navigate = useNavigate();
   const audioRef = useRef(new Audio(speech));
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -34,7 +37,8 @@ const AudioPlayer = () => {
 
     const onEnded = () => {
       setIsPlaying(false);
-      alert("스탬프 발급완료");
+      setLocalStorage(id, true);
+      navigate("/main");
     };
 
     audio.addEventListener("loadedmetadata", onLoadedMetadata);

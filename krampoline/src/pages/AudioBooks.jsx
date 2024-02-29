@@ -29,7 +29,7 @@ const AudioBooks = () => {
           대한 존경의 마음을 갖게 합니다.`}
         </Content>
       </Wrapper>
-      <AudioPlayer />
+      <AudioPlayer id={id} />
     </>
   );
 };

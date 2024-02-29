@@ -5,7 +5,7 @@ import SubTitle from "components/atoms/SubTitle";
 import Content from "components/atoms/Content";
 import Description from "components/atoms/Description";
 
-const ModalDescription = () => {
+const ModalDescription = ({ onClickHandler }) => {
   return (
     <PageWrapper>
       <Wrapper>
@@ -24,7 +24,7 @@ const ModalDescription = () => {
         </DescriptionBox>
       </Wrapper>
       <ButtonWrapper>
-        <Button>더보기</Button>
+        <Button onClick={onClickHandler}>더보기</Button>
       </ButtonWrapper>
     </PageWrapper>
   );
